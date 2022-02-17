@@ -6,6 +6,7 @@ import cn.cocowwy.cocowwymeituan.constant.StringPool;
 import cn.cocowwy.cocowwymeituan.constant.URLPrefix;
 import cn.cocowwy.cocowwymeituan.core.CoreUtil;
 import cn.cocowwy.cocowwymeituan.core.SignGenerator;
+import cn.cocowwy.cocowwymeituan.rs.Result;
 import cn.hutool.core.lang.Assert;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HttpUtil;
@@ -97,6 +98,6 @@ public class MTOrderApi {
     }
 
     private String createUrl(String spliceUrl, String sig) {
-        return spliceUrl.replaceAll(meiTuanProperties.getAppSecret(), "") + SIGN + sig;
+        return spliceUrl.replaceAll(meiTuanProperties.getAppSecret(), "") + StringPool.SIGN + sig;
     }
 }

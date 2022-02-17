@@ -70,6 +70,6 @@ public class MTMerchantApi {
     }
 
     private String createUrl(String spliceUrl, String sig) {
-        return spliceUrl.replaceAll(meiTuanProperties.getAppSecret(), "") + SIGN + sig;
+        return spliceUrl.replaceAll(meiTuanProperties.getAppSecret(), "") + StringPool.SIGN + sig;
     }
 }
