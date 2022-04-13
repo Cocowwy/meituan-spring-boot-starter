@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.cocowwy</groupId>
+    <artifactId>cocowwy-meituan</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <description>美团品牌商SpringBoot-Starter，便于更轻便的调用美团品牌商接口</description>
+
+    <modules>
+        <module>meituan-spring-boot-starter</module>
+        <module>meituan-spring-boot-test</module>
+        <module>meituan-brand-core</module>
+    </modules>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <cocowwy-meituan-version>1.0-SNAPSHOT</cocowwy-meituan-version>
+    </properties>
+
+    <prerequisites>
+    </prerequisites>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.cocowwy</groupId>
+                <artifactId>meituan-brand-core</artifactId>
+                <version>${cocowwy-meituan-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.cocowwy</groupId>
+                <artifactId>meituan-spring-boot-test</artifactId>
+                <version>${cocowwy-meituan-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.cocowwy</groupId>
+                <artifactId>meituan-spring-boot-starter</artifactId>
+                <version>${cocowwy-meituan-version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
