@@ -36,12 +36,13 @@ public class MTOrderApi {
         Assert.notNull(orderId);
 
         Map<String, String> map = globalPropertiesMap;
+        map.put("timestamp", String.valueOf(System.currentTimeMillis() / 1000L));
         map.put("order_id", orderId);
 
         String spliceUrl = StrUtil.format(StringPool.REQUEST_TEMPLETE, URLPrefix.ORDER_URL_PREFIX, RouteEnum.CONFIRM.getSuffix(), CoreUtil.concatParams(map));
         String sig = SignGenerator.genSig(spliceUrl + meiTuanProperties.getAppSecret());
 
-        return JSONObject.parseObject(HttpUtil.createGet(createUrl(spliceUrl, sig)).execute().body(), Result.class);
+        return JSONObject.parseObject(HttpUtil.createGet(CoreUtil.createUrl(meiTuanProperties, spliceUrl, sig)).execute().body(), Result.class);
     }
 
     /**
@@ -55,6 +56,7 @@ public class MTOrderApi {
         Assert.notNull(reason_code);
 
         Map<String, String> map = globalPropertiesMap;
+        map.put("timestamp", String.valueOf(System.currentTimeMillis() / 1000L));
         map.put("order_id", orderId);
         map.put("reason", reason);
         map.put("reason_code", reason_code);
@@ -62,7 +64,7 @@ public class MTOrderApi {
         String spliceUrl = StrUtil.format(StringPool.REQUEST_TEMPLETE, URLPrefix.ORDER_URL_PREFIX, RouteEnum.CANCEL.getSuffix(), CoreUtil.concatParams(map));
         String sig = SignGenerator.genSig(spliceUrl + meiTuanProperties.getAppSecret());
 
-        return JSONObject.parseObject(HttpUtil.createGet(createUrl(spliceUrl, sig)).execute().body(), Result.class);
+        return JSONObject.parseObject(HttpUtil.createGet(CoreUtil.createUrl(meiTuanProperties, spliceUrl, sig)).execute().body(), Result.class);
     }
 
     /**
@@ -73,12 +75,13 @@ public class MTOrderApi {
     public Result orderDetail(String orderId) {
         Assert.notNull(orderId);
         Map<String, String> map = globalPropertiesMap;
+        map.put("timestamp", String.valueOf(System.currentTimeMillis() / 1000L));
         map.put("order_id", orderId);
 
         String spliceUrl = StrUtil.format(StringPool.REQUEST_TEMPLETE, URLPrefix.ORDER_URL_PREFIX, RouteEnum.GET_ORDER_DETAIL.getSuffix(), CoreUtil.concatParams(map));
         String sig = SignGenerator.genSig(spliceUrl + meiTuanProperties.getAppSecret());
 
-        return JSONObject.parseObject(HttpUtil.createGet(createUrl(spliceUrl, sig)).execute().body(), Result.class);
+        return JSONObject.parseObject(HttpUtil.createGet(CoreUtil.createUrl(meiTuanProperties, spliceUrl, sig)).execute().body(), Result.class);
     }
 
     /**
@@ -89,15 +92,12 @@ public class MTOrderApi {
     public Result diningOut(String orderId) {
         Assert.notNull(orderId);
         Map<String, String> map = globalPropertiesMap;
+        map.put("timestamp", String.valueOf(System.currentTimeMillis() / 1000L));
         map.put("order_id", orderId);
 
         String spliceUrl = StrUtil.format(StringPool.REQUEST_TEMPLETE, URLPrefix.ORDER_URL_PREFIX, RouteEnum.PREPARATION_MEAL_COMPLETE.getSuffix(), CoreUtil.concatParams(map));
         String sig = SignGenerator.genSig(spliceUrl + meiTuanProperties.getAppSecret());
 
-        return JSONObject.parseObject(HttpUtil.createGet(createUrl(spliceUrl, sig)).execute().body(), Result.class);
-    }
-
-    private String createUrl(String spliceUrl, String sig) {
-        return spliceUrl.replaceAll(meiTuanProperties.getAppSecret(), "") + StringPool.SIGN + sig;
+        return JSONObject.parseObject(HttpUtil.createGet(CoreUtil.createUrl(meiTuanProperties, spliceUrl, sig)).execute().body(), Result.class);
     }
 }

@@ -40,13 +40,14 @@ public class MTGoodApi {
         request.setCategory_name_origin(null);
 
         Map<String, String> map = globalPropertiesMap;
+        map.put("timestamp", String.valueOf(System.currentTimeMillis() / 1000L));
         if (CoreUtil.convertToMap(request) != null) {
             map.putAll(CoreUtil.convertToMap(request));
         }
 
         String spliceUrl = StrUtil.format(StringPool.REQUEST_TEMPLETE, URLPrefix.FOOD_CAT_URL_PREFIX, RouteEnum.FOOD_CAT_UPDATE.getSuffix(), CoreUtil.concatParams(map));
         String sig = SignGenerator.genSig(spliceUrl + meiTuanProperties.getAppSecret());
-        return JSONObject.parseObject(HttpUtil.createPost(createUrl(spliceUrl, sig)).execute().body(), Result.class);
+        return JSONObject.parseObject(HttpUtil.createPost(CoreUtil.createUrl(meiTuanProperties, spliceUrl, sig)).execute().body(), Result.class);
     }
 
     /**
@@ -56,13 +57,14 @@ public class MTGoodApi {
         Assert.notNull(request.getCategory_name());
 
         Map<String, String> map = globalPropertiesMap;
+        map.put("timestamp", String.valueOf(System.currentTimeMillis() / 1000L));
         if (CoreUtil.convertToMap(request) != null) {
             map.putAll(CoreUtil.convertToMap(request));
         }
 
         String spliceUrl = StrUtil.format(StringPool.REQUEST_TEMPLETE, URLPrefix.FOOD_CAT_URL_PREFIX, RouteEnum.FOOD_CAT_UPDATE.getSuffix(), CoreUtil.concatParams(map));
         String sig = SignGenerator.genSig(spliceUrl + meiTuanProperties.getAppSecret());
-        return JSONObject.parseObject(HttpUtil.createPost(createUrl(spliceUrl, sig)).execute().body(), Result.class);
+        return JSONObject.parseObject(HttpUtil.createPost(CoreUtil.createUrl(meiTuanProperties, spliceUrl, sig)).execute().body(), Result.class);
     }
 
     /**
@@ -73,16 +75,13 @@ public class MTGoodApi {
         Assert.notNull(request.getCategory_name());
 
         Map<String, String> map = globalPropertiesMap;
+        map.put("timestamp", String.valueOf(System.currentTimeMillis() / 1000L));
         if (CoreUtil.convertToMap(request) != null) {
             map.putAll(CoreUtil.convertToMap(request));
         }
 
         String spliceUrl = StrUtil.format(StringPool.REQUEST_TEMPLETE, URLPrefix.FOOD_CAT_URL_PREFIX, RouteEnum.FOOD_CAT_DELETE.getSuffix(), CoreUtil.concatParams(map));
         String sig = SignGenerator.genSig(spliceUrl + meiTuanProperties.getAppSecret());
-        return JSONObject.parseObject(HttpUtil.createPost(createUrl(spliceUrl, sig)).execute().body(), Result.class);
-    }
-
-    private String createUrl(String spliceUrl, String sig) {
-        return spliceUrl.replaceAll(meiTuanProperties.getAppSecret(), "") + StringPool.SIGN + sig;
+        return JSONObject.parseObject(HttpUtil.createPost(CoreUtil.createUrl(meiTuanProperties, spliceUrl, sig)).execute().body(), Result.class);
     }
 }

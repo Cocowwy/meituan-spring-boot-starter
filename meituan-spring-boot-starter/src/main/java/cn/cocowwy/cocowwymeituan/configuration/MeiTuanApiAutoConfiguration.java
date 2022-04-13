@@ -1,7 +1,5 @@
 package cn.cocowwy.cocowwymeituan.configuration;
 
-
-
 import cn.cocowwy.meituancore.api.MTGoodApi;
 import cn.cocowwy.meituancore.api.MTMerchantApi;
 import cn.cocowwy.meituancore.api.MTOrderApi;
@@ -46,8 +44,7 @@ public class MeiTuanApiAutoConfiguration {
 
     @Bean
     public Map<String, String> globalPropertiesMap() {
-        Map<String, String> resultMap = new HashMap();
-        resultMap.put("timestamp", String.valueOf(System.currentTimeMillis() / 1000L));
+        Map<String, String> resultMap = new HashMap(2);
         resultMap.put("app_id", meiTuanProperties.getAppId());
         resultMap.put("appSecret", meiTuanProperties.getAppSecret());
         return resultMap;

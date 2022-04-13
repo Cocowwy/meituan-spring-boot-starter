@@ -43,6 +43,7 @@ public class MTMerchantApi {
         Assert.notNull(request.getStatus());
 
         Map<String, String> map = globalPropertiesMap;
+        map.put("timestamp", String.valueOf(System.currentTimeMillis() / 1000L));
         if (CoreUtil.convertToMap(request) != null) {
             map.putAll(CoreUtil.convertToMap(request));
         }
@@ -50,7 +51,7 @@ public class MTMerchantApi {
         String spliceUrl = StrUtil.format(StringPool.REQUEST_TEMPLETE, URLPrefix.MERCHANT_URL_PREFIX, request.getStatus().name().equals("CLOSE")
                 ? RouteEnum.CLOSE.getSuffix() : RouteEnum.OPEN.getSuffix(), CoreUtil.concatParams(map));
         String sig = SignGenerator.genSig(spliceUrl + meiTuanProperties.getAppSecret());
-        return JSONObject.parseObject(HttpUtil.createPost(createUrl(spliceUrl, sig)).execute().body(), Result.class);
+        return JSONObject.parseObject(HttpUtil.createPost(CoreUtil.createUrl(meiTuanProperties, spliceUrl, sig)).execute().body(), Result.class);
     }
 
 
@@ -63,14 +64,13 @@ public class MTMerchantApi {
         Assert.notNull(appPoiCode);
 
         Map<String, String> map = globalPropertiesMap;
+        map.put("timestamp", String.valueOf(System.currentTimeMillis() / 1000L));
         map.put("app_poi_codes", appPoiCode);
 
         String spliceUrl = StrUtil.format(StringPool.REQUEST_TEMPLETE, URLPrefix.MERCHANT_URL_PREFIX, RouteEnum.MGET.getSuffix(), CoreUtil.concatParams(map));
         String sig = SignGenerator.genSig(spliceUrl + meiTuanProperties.getAppSecret());
-        return JSONObject.parseObject(HttpUtil.createGet(createUrl(spliceUrl, sig)).execute().body(), Result.class);
+        return JSONObject.parseObject(HttpUtil.createGet(CoreUtil.createUrl(meiTuanProperties, spliceUrl, sig)).execute().body(), Result.class);
     }
 
-    private String createUrl(String spliceUrl, String sig) {
-        return spliceUrl.replaceAll(meiTuanProperties.getAppSecret(), "") + StringPool.SIGN + sig;
-    }
+
 }
