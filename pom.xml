@@ -10,6 +10,12 @@
 
     <description>美团品牌商SpringBoot-Starter，便于更轻便的调用美团品牌商接口</description>
 
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+
     <modules>
         <module>meituan-spring-boot-starter</module>
         <module>meituan-spring-boot-test</module>
@@ -24,8 +30,43 @@
         <spring-boot.version>2.3.9.RELEASE</spring-boot.version>
     </properties>
 
-    <prerequisites>
-    </prerequisites>
+    <developers>
+        <developer>
+            <id>Cocowwy</id>
+            <name>Cocowwy</name>
+            <email>514658459@qq.com</email>
+            <roles>
+                <role>Java Development Engineer</role>
+            </roles>
+            <timezone>2022-4-13 21:21:36</timezone>
+        </developer>
+    </developers>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <tag>master</tag>
+        <url>https://github.com/Cocowwy/meituan-spring-boot-starter.git</url>
+        <connection>scm:git:git@github.com:Cocowwy/meituan-spring-boot-starter.git</connection>
+        <developerConnection>scm:git:git@github.com:Cocowwy/meituan-spring-boot-starter.git</developerConnection>
+    </scm>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+        </snapshotRepository>
+        <repository>
+            <id>release</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/releases/</url>
+        </repository>
+    </distributionManagement>
+
 
     <dependencyManagement>
         <dependencies>
@@ -54,5 +95,26 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+
+    <build>
+        <plugins>
+            <!-- Source -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
 
 </project>
