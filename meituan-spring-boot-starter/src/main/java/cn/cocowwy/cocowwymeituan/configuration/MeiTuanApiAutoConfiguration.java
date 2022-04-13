@@ -1,10 +1,11 @@
-package cn.cocowwy.cocowwymeituan.config;
+package cn.cocowwy.cocowwymeituan.configuration;
 
 
-import cn.cocowwy.cocowwymeituan.api.MTGoodApi;
-import cn.cocowwy.cocowwymeituan.api.MTMerchantApi;
-import cn.cocowwy.cocowwymeituan.api.MTOrderApi;
-import cn.cocowwy.cocowwymeituan.core.CoreUtil;
+
+import cn.cocowwy.meituancore.api.MTGoodApi;
+import cn.cocowwy.meituancore.api.MTMerchantApi;
+import cn.cocowwy.meituancore.api.MTOrderApi;
+import cn.cocowwy.meituancore.core.CoreUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;

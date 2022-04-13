@@ -8,10 +8,9 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>cn.cocowwy</groupId>
     <artifactId>meituan-spring-boot-test</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
     <name>meituan-spring-boot-test</name>
+    <version>1.0-SNAPSHOT</version>
     <description>测试模块</description>
 
 

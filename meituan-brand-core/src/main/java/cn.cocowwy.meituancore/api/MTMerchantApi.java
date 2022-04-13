@@ -1,20 +1,21 @@
-package cn.cocowwy.cocowwymeituan.api;
+package cn.cocowwy.meituancore.api;
 
-import cn.cocowwy.cocowwymeituan.config.MeiTuanProperties;
-import cn.cocowwy.cocowwymeituan.constant.RouteEnum;
-import cn.cocowwy.cocowwymeituan.constant.StringPool;
-import cn.cocowwy.cocowwymeituan.constant.URLPrefix;
-import cn.cocowwy.cocowwymeituan.core.CoreUtil;
-import cn.cocowwy.cocowwymeituan.core.SignGenerator;
-import cn.cocowwy.cocowwymeituan.rq.MerchantStatusRequest;
+
+import cn.cocowwy.cocowwymeituan.configuration.MeiTuanProperties;
+import cn.cocowwy.meituancore.constant.RouteEnum;
+import cn.cocowwy.meituancore.constant.StringPool;
+import cn.cocowwy.meituancore.constant.URLPrefix;
+import cn.cocowwy.meituancore.core.CoreUtil;
+import cn.cocowwy.meituancore.core.SignGenerator;
+import cn.cocowwy.meituancore.rq.MerchantStatusRequest;
+import cn.cocowwy.meituancore.rs.Result;
 import cn.hutool.core.lang.Assert;
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.http.HttpUtil;
 import com.alibaba.fastjson.JSONObject;
-
 import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.Map;
-import cn.cocowwy.cocowwymeituan.rs.Result;
 
 
 /**

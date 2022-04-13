@@ -1,4 +1,4 @@
-package cn.cocowwy.cocowwymeituan.core;
+package cn.cocowwy.meituancore.core;
 
 import com.alibaba.fastjson.JSON;
 

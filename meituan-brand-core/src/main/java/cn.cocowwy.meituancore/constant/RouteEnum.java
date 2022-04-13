@@ -1,4 +1,4 @@
-package cn.cocowwy.cocowwymeituan.constant;
+package cn.cocowwy.meituancore.constant;
 
 /**
  * @author cocowwy.cn

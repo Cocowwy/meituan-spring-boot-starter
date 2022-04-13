@@ -1,4 +1,4 @@
-package cn.cocowwy.cocowwymeituan.core;
+package cn.cocowwy.meituancore.core;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;

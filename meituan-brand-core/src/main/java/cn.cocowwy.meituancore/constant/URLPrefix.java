@@ -1,4 +1,4 @@
-package constant;
+package cn.cocowwy.meituancore.constant;
 
 /**
  * 美团开放平台的测试和生产为同一环境

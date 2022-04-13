@@ -1,4 +1,4 @@
-package cn.cocowwy.cocowwymeituan.config;
+package cn.cocowwy.cocowwymeituan.configuration;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

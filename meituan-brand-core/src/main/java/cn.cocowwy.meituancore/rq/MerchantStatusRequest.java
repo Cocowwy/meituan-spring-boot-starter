@@ -1,4 +1,4 @@
-package cn.cocowwy.cocowwymeituan.rq;
+package cn.cocowwy.meituancore.rq;
 
 /**
  * @author cocowwy.cn
