@@ -1,0 +1,21 @@
+{
+  "groups": [
+    {
+      "name": "cocowwy-meituan",
+      "type": "cn.cocowwy.cocowwymeituan.configuration.MeiTuanProperties",
+      "sourceType": "cn.cocowwy.cocowwymeituan.configuration.MeiTuanProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "cocowwy.meituan.appId",
+      "type": "java.lang.String",
+      "description": "your appId"
+    },
+    {
+      "name": "cocowwy.meituan.appSecret",
+      "type": "java.lang.String",
+      "description": "your appSecret"
+    }
+  ]
+}
