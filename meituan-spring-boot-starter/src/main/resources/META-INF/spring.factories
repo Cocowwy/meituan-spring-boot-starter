@@ -1,1 +1,2 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=cn.cocowwy.cocowwymeituan.config.MeiTuanApiAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+cn.cocowwy.cocowwymeituan.configuration.MeiTuanApiAutoConfiguration

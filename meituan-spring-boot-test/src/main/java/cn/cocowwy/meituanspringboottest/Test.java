@@ -1,7 +1,6 @@
 package cn.cocowwy.meituanspringboottest;
 
-import cn.cocowwy.meituancore.api.MTGoodApi;
-import cn.cocowwy.meituancore.api.MTOrderApi;
+import cn.cocowwy.cocowwymeituan.api.MTOrderApi;
 import cn.cocowwy.meituancore.rs.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -22,7 +21,8 @@ public class Test implements ApplicationRunner {
      * @param args
      * @throws Exception
      */
-    public void run(ApplicationArguments args) throws Exception {
+    public void run(ApplicationArguments args) {
         Result result = mtOrderApi.orderDetail("123123");
+        System.out.println(result);
     }
 }

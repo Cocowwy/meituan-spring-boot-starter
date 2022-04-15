@@ -1,4 +1,4 @@
-package cn.cocowwy.meituancore.api;
+package cn.cocowwy.cocowwymeituan.api;
 
 import cn.cocowwy.cocowwymeituan.configuration.MeiTuanProperties;
 import cn.cocowwy.meituancore.constant.RouteEnum;
@@ -47,7 +47,7 @@ public class MTGoodApi {
 
         String spliceUrl = StrUtil.format(StringPool.REQUEST_TEMPLETE, URLPrefix.FOOD_CAT_URL_PREFIX, RouteEnum.FOOD_CAT_UPDATE.getSuffix(), CoreUtil.concatParams(map));
         String sig = SignGenerator.genSig(spliceUrl + meiTuanProperties.getAppSecret());
-        return JSONObject.parseObject(HttpUtil.createPost(CoreUtil.createUrl(meiTuanProperties, spliceUrl, sig)).execute().body(), Result.class);
+        return JSONObject.parseObject(HttpUtil.createPost(CoreUtil.createUrl(meiTuanProperties.getAppSecret(), spliceUrl, sig)).execute().body(), Result.class);
     }
 
     /**
@@ -64,7 +64,7 @@ public class MTGoodApi {
 
         String spliceUrl = StrUtil.format(StringPool.REQUEST_TEMPLETE, URLPrefix.FOOD_CAT_URL_PREFIX, RouteEnum.FOOD_CAT_UPDATE.getSuffix(), CoreUtil.concatParams(map));
         String sig = SignGenerator.genSig(spliceUrl + meiTuanProperties.getAppSecret());
-        return JSONObject.parseObject(HttpUtil.createPost(CoreUtil.createUrl(meiTuanProperties, spliceUrl, sig)).execute().body(), Result.class);
+        return JSONObject.parseObject(HttpUtil.createPost(CoreUtil.createUrl(meiTuanProperties.getAppSecret(), spliceUrl, sig)).execute().body(), Result.class);
     }
 
     /**
@@ -82,6 +82,6 @@ public class MTGoodApi {
 
         String spliceUrl = StrUtil.format(StringPool.REQUEST_TEMPLETE, URLPrefix.FOOD_CAT_URL_PREFIX, RouteEnum.FOOD_CAT_DELETE.getSuffix(), CoreUtil.concatParams(map));
         String sig = SignGenerator.genSig(spliceUrl + meiTuanProperties.getAppSecret());
-        return JSONObject.parseObject(HttpUtil.createPost(CoreUtil.createUrl(meiTuanProperties, spliceUrl, sig)).execute().body(), Result.class);
+        return JSONObject.parseObject(HttpUtil.createPost(CoreUtil.createUrl(meiTuanProperties.getAppSecret(), spliceUrl, sig)).execute().body(), Result.class);
     }
 }

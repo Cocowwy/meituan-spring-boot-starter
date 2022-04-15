@@ -1,8 +1,8 @@
 package cn.cocowwy.cocowwymeituan.configuration;
 
-import cn.cocowwy.meituancore.api.MTGoodApi;
-import cn.cocowwy.meituancore.api.MTMerchantApi;
-import cn.cocowwy.meituancore.api.MTOrderApi;
+import cn.cocowwy.cocowwymeituan.api.MTGoodApi;
+import cn.cocowwy.cocowwymeituan.api.MTMerchantApi;
+import cn.cocowwy.cocowwymeituan.api.MTOrderApi;
 import cn.cocowwy.meituancore.core.CoreUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -16,12 +16,9 @@ import java.util.Map;
  * @author cocowwy.cn
  * @create 2021-12-12-13:53
  */
-@Configuration
+@Configuration(proxyBeanMethods = false)
 @EnableConfigurationProperties(MeiTuanProperties.class)
 public class MeiTuanApiAutoConfiguration {
-    @Autowired
-    private MeiTuanProperties meiTuanProperties;
-
     @Bean
     public MTGoodApi mtGoodApi() {
         return new MTGoodApi();
@@ -43,7 +40,7 @@ public class MeiTuanApiAutoConfiguration {
     }
 
     @Bean
-    public Map<String, String> globalPropertiesMap() {
+    public Map<String, String> globalPropertiesMap(MeiTuanProperties meiTuanProperties) {
         Map<String, String> resultMap = new HashMap(2);
         resultMap.put("app_id", meiTuanProperties.getAppId());
         resultMap.put("appSecret", meiTuanProperties.getAppSecret());

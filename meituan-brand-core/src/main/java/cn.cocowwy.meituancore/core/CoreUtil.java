@@ -1,6 +1,5 @@
 package cn.cocowwy.meituancore.core;
 
-import cn.cocowwy.cocowwymeituan.configuration.MeiTuanProperties;
 import cn.cocowwy.meituancore.constant.StringPool;
 import com.alibaba.fastjson.JSON;
 
@@ -71,12 +70,12 @@ public class CoreUtil {
 
     /**
      * 请求URL
-     * @param meiTuanProperties
+     * @param appSecret
      * @param spliceUrl
      * @param sig
      * @return
      */
-    public static String createUrl(MeiTuanProperties meiTuanProperties, String spliceUrl, String sig) {
-        return spliceUrl.replaceAll(meiTuanProperties.getAppSecret(), "") + StringPool.SIGN + sig;
+    public static String createUrl(String appSecret, String spliceUrl, String sig) {
+        return spliceUrl.replaceAll(appSecret, "") + StringPool.SIGN + sig;
     }
 }

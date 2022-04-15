@@ -32,10 +32,6 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
         </dependency>
-        <dependency>
-            <groupId>cn.cocowwy</groupId>
-            <artifactId>meituan-spring-boot-starter</artifactId>
-        </dependency>
     </dependencies>
 
     <build>

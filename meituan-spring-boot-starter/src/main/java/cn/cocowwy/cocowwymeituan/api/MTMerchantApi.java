@@ -1,4 +1,4 @@
-package cn.cocowwy.meituancore.api;
+package cn.cocowwy.cocowwymeituan.api;
 
 
 import cn.cocowwy.cocowwymeituan.configuration.MeiTuanProperties;
@@ -51,7 +51,7 @@ public class MTMerchantApi {
         String spliceUrl = StrUtil.format(StringPool.REQUEST_TEMPLETE, URLPrefix.MERCHANT_URL_PREFIX, request.getStatus().name().equals("CLOSE")
                 ? RouteEnum.CLOSE.getSuffix() : RouteEnum.OPEN.getSuffix(), CoreUtil.concatParams(map));
         String sig = SignGenerator.genSig(spliceUrl + meiTuanProperties.getAppSecret());
-        return JSONObject.parseObject(HttpUtil.createPost(CoreUtil.createUrl(meiTuanProperties, spliceUrl, sig)).execute().body(), Result.class);
+        return JSONObject.parseObject(HttpUtil.createPost(CoreUtil.createUrl(meiTuanProperties.getAppSecret(), spliceUrl, sig)).execute().body(), Result.class);
     }
 
 
@@ -69,7 +69,7 @@ public class MTMerchantApi {
 
         String spliceUrl = StrUtil.format(StringPool.REQUEST_TEMPLETE, URLPrefix.MERCHANT_URL_PREFIX, RouteEnum.MGET.getSuffix(), CoreUtil.concatParams(map));
         String sig = SignGenerator.genSig(spliceUrl + meiTuanProperties.getAppSecret());
-        return JSONObject.parseObject(HttpUtil.createGet(CoreUtil.createUrl(meiTuanProperties, spliceUrl, sig)).execute().body(), Result.class);
+        return JSONObject.parseObject(HttpUtil.createGet(CoreUtil.createUrl(meiTuanProperties.getAppSecret(), spliceUrl, sig)).execute().body(), Result.class);
     }
 
 

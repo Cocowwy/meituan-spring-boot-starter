@@ -1,4 +1,4 @@
-package cn.cocowwy.meituancore.api;
+package cn.cocowwy.cocowwymeituan.api;
 
 
 import cn.cocowwy.cocowwymeituan.configuration.MeiTuanProperties;
@@ -42,7 +42,7 @@ public class MTOrderApi {
         String spliceUrl = StrUtil.format(StringPool.REQUEST_TEMPLETE, URLPrefix.ORDER_URL_PREFIX, RouteEnum.CONFIRM.getSuffix(), CoreUtil.concatParams(map));
         String sig = SignGenerator.genSig(spliceUrl + meiTuanProperties.getAppSecret());
 
-        return JSONObject.parseObject(HttpUtil.createGet(CoreUtil.createUrl(meiTuanProperties, spliceUrl, sig)).execute().body(), Result.class);
+        return JSONObject.parseObject(HttpUtil.createGet(CoreUtil.createUrl(meiTuanProperties.getAppSecret(), spliceUrl, sig)).execute().body(), Result.class);
     }
 
     /**
@@ -64,7 +64,7 @@ public class MTOrderApi {
         String spliceUrl = StrUtil.format(StringPool.REQUEST_TEMPLETE, URLPrefix.ORDER_URL_PREFIX, RouteEnum.CANCEL.getSuffix(), CoreUtil.concatParams(map));
         String sig = SignGenerator.genSig(spliceUrl + meiTuanProperties.getAppSecret());
 
-        return JSONObject.parseObject(HttpUtil.createGet(CoreUtil.createUrl(meiTuanProperties, spliceUrl, sig)).execute().body(), Result.class);
+        return JSONObject.parseObject(HttpUtil.createGet(CoreUtil.createUrl(meiTuanProperties.getAppSecret(), spliceUrl, sig)).execute().body(), Result.class);
     }
 
     /**
@@ -81,7 +81,7 @@ public class MTOrderApi {
         String spliceUrl = StrUtil.format(StringPool.REQUEST_TEMPLETE, URLPrefix.ORDER_URL_PREFIX, RouteEnum.GET_ORDER_DETAIL.getSuffix(), CoreUtil.concatParams(map));
         String sig = SignGenerator.genSig(spliceUrl + meiTuanProperties.getAppSecret());
 
-        return JSONObject.parseObject(HttpUtil.createGet(CoreUtil.createUrl(meiTuanProperties, spliceUrl, sig)).execute().body(), Result.class);
+        return JSONObject.parseObject(HttpUtil.createGet(CoreUtil.createUrl(meiTuanProperties.getAppSecret(), spliceUrl, sig)).execute().body(), Result.class);
     }
 
     /**
@@ -98,6 +98,6 @@ public class MTOrderApi {
         String spliceUrl = StrUtil.format(StringPool.REQUEST_TEMPLETE, URLPrefix.ORDER_URL_PREFIX, RouteEnum.PREPARATION_MEAL_COMPLETE.getSuffix(), CoreUtil.concatParams(map));
         String sig = SignGenerator.genSig(spliceUrl + meiTuanProperties.getAppSecret());
 
-        return JSONObject.parseObject(HttpUtil.createGet(CoreUtil.createUrl(meiTuanProperties, spliceUrl, sig)).execute().body(), Result.class);
+        return JSONObject.parseObject(HttpUtil.createGet(CoreUtil.createUrl(meiTuanProperties.getAppSecret(), spliceUrl, sig)).execute().body(), Result.class);
     }
 }
