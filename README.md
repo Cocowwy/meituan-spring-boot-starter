@@ -11,10 +11,9 @@ pom.xml
 
 yml
 ```yml
-cocowwy:
-  meituan:
-    appId:xxxx
-    appSecret: xxx   
+meituan:
+  appId:xxxx
+  appSecret: xxx   
 ```
 
 目前只提供可一些常用的接口请求功能，如果需要新增的话，可以提 issue，然后会对功能进行完善
