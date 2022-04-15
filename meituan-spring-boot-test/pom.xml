@@ -5,12 +5,12 @@
     <parent>
         <groupId>cn.cocowwy</groupId>
         <artifactId>cocowwy-meituan</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
 
     <artifactId>meituan-spring-boot-test</artifactId>
     <name>meituan-spring-boot-test</name>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <description>测试模块</description>
 
     <dependencies>

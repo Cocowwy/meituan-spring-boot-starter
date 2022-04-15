@@ -5,12 +5,12 @@
     <parent>
         <groupId>cn.cocowwy</groupId>
         <artifactId>cocowwy-meituan</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>1.0.0</version>
     </parent>
 
     <artifactId>meituan-brand-core</artifactId>
     <name>meituan-brand-core</name>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <description>美团品牌商逻辑封装实现</description>
 
     <dependencies>
