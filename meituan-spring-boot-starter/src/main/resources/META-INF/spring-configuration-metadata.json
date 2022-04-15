@@ -8,12 +8,12 @@
   ],
   "properties": [
     {
-      "name": "cocowwy.meituan.appId",
+      "name": "meituan.appId",
       "type": "java.lang.String",
       "description": "your appId"
     },
     {
-      "name": "cocowwy.meituan.appSecret",
+      "name": "meituan.appSecret",
       "type": "java.lang.String",
       "description": "your appSecret"
     }

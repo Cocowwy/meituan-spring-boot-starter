@@ -4,10 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <packaging>pom</packaging>
+
     <groupId>cn.cocowwy</groupId>
     <artifactId>cocowwy-meituan</artifactId>
     <version>1.0-SNAPSHOT</version>
-
     <description>美团品牌商SpringBoot-Starter，便于更轻便的调用美团品牌商接口</description>
 
     <parent>
@@ -38,7 +39,7 @@
             <roles>
                 <role>Java Development Engineer</role>
             </roles>
-            <timezone>2022-4-13 21:21:36</timezone>
+            <timezone>2022-4-15 13:32:36</timezone>
         </developer>
     </developers>
 
@@ -96,7 +97,6 @@
         </dependencies>
     </dependencyManagement>
 
-
     <build>
         <plugins>
             <!-- Source -->
@@ -115,6 +115,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>

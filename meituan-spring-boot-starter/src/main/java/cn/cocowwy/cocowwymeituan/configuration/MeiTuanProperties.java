@@ -6,7 +6,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @author cocowwy.cn
  * @create 2021-12-12-13:53
  */
-@ConfigurationProperties(prefix = "cocowwy.meituan")
+@ConfigurationProperties(prefix = "meituan")
 public class MeiTuanProperties {
     private String appId;
     private String appSecret;
