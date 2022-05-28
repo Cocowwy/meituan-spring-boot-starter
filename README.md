@@ -16,7 +16,7 @@ pom.xml
 yml
 ```yml
 meituan:
-  appId:xxxx
+  appId: xxxx
   appSecret: xxx   
 ```
 
